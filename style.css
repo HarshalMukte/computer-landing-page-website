@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300;1,400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5% 9%;
+    z-index: 1000;
+    background: rgb(0, 0, 0);
+}
+
+header .logo i {
+    color: #fff;
+    font-size: 25px;
+}
+header ul li{
+    display: inline-block;
+    list-style: none;
+
+}
+nav a {
+    color: #fff;
+   padding: 0 10px;
+}
+nav a:hover,
+nav a.active,
+header .logo i:hover,
+header label:hover
+{
+    color: cyan;
+}
+header label{   
+    color: #fff;
+}
+header input{
+    visibility: hidden;
+    opacity: 0;
+}
+header label{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+section{
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+ 
+}
+section .content
+{
+    flex: 35%;
+    padding: 10% 2% 4% 2%;
+}
+ .image{
+    flex: 35%;
+    
+}
+
+ .image img{
+    width: 100%;
+    
+}
+
+section span{
+    color: rgb(16, 218, 218);
+    font-weight: 900;
+    font-size: 28px;
+}
+section h2{
+  padding-bottom: 2%;
+}
+
+section p{
+       text-transform: lowercase;
+       line-height: 1.7;
+       margin-bottom: 4%;
+}
+
+section a{
+    color: #fff;
+   padding: 4px 3px;
+   background:rgb(16, 218, 218);
+   border-radius: 3px;
+}
+
+section:nth-child(odd){
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.form{
+    flex: 30%;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+.contact form .heading{
+    text-align: center;
+    padding: 0;
+    padding-bottom: 5%;
+}
+
+ form .inputbox{
+    position: relative;
+}
+ form .inputbox input,
+ form .inputbox textarea{
+    width: 100%;
+    background: none;
+    color: #666;
+    margin: 2% 0;
+    padding: 1% 0;
+    font-size: 15px;
+    border-bottom: 2px solid rgba(253, 253, 253, 0.1);
+}
+
+
+form .inputbox textarea{
+    resize: none;
+    height: 50px;
+}
+
+form .inputbox label{
+position: absolute;
+top: 12px;
+left: 0;
+font-size: 17px;
+color: #666;
+transition: .2s linear;
+}
+form .inputbox input:focus ~ label,
+form .inputbox input:valid ~ label,
+form .inputbox textarea:focus ~ label,
+form .inputbox textarea:valid ~ label{
+    top: -3px;
+    font-size: 15px;
+    color: cyan;
+}
+form .button{
+    color: #fff;
+    padding: 4px 3px;
+    background:rgb(16, 218, 218);
+    border-radius: 3px;
+    font-size: medium;
+ }
+
+
+
+
+
+
+
+
+
+
+
+/* media query */
+@media (max-width: 800px) {
+     .content, .image {
+      flex: 100%;
+    }
+  }
+
+  @media (max-width:600px){
+    .fa-bars{
+        visibility: visible;
+        opacity: 1;
+    }
+    
+
+    .navbar{
+        opacity: 0;
+    }
+   
+
+    .navbar ul{
+        position: absolute;
+        top: 42px;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        text-align: center;
+        overflow: auto;
+        transition: 0.5s;
+        color: #fff;
+        background: rgb(16, 218, 218);
+        display: flex;
+        flex-direction: column;
+    } 
+
+    .navbar ul .active{
+        color: #fff;
+    }
+    
+    .navbar ul .active:hover{
+        color: cyan;
+    }
+    
+    .navbar ul li {
+        margin:10px 5px;
+        padding: 1px;
+        font-size: 24px;
+    }
+
+    header input:checked  ~ .navbar,
+    header input:checked ~ .fa-times {
+       opacity: 1;
+       visibility: visible;
+    }
+    header input:checked ~ .fa-bars{
+        opacity: 0;
+    }
+}
